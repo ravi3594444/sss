@@ -3,46 +3,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karnataka Cafe - Patna Franchise</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap');
-:root{--green:#2e7d32;--yellow:#f4c430;--dark:#1b1b1b;}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Open Sans',sans-serif;background:#fff8e1;color:#333}
-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green);font-weight:700}
-nav a{margin-left:1.5rem;text-decoration:none;color:var(--dark);font-weight:600;font-size:.9rem;text-transform:uppercase}
-nav a:hover{color:var(--green)}
-.hero{position:relative;height:80vh;background:linear-gradient(135deg,#2e7d32 0%,#4caf50 60%,#f4c430 100%);display:flex;align-items:center;padding:0 5%;overflow:hidden}
-.hero h1{font-family:'Playfair Display',serif;font-size:5rem;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.3);line-height:1.1}
-.hero span{display:block;font-family:'Open Sans',sans-serif;font-size:1.5rem;font-style:italic;color:#fff;margin-top:1rem;letter-spacing:2px}
-.btn{display:inline-block;margin-top:2rem;padding:1rem 2.5rem;background:#fff;color:var(--green);border-radius:30px;font-weight:700;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,.15)}
-.about{padding:5rem 5%;max-width:1200px;margin:0 auto}
-.about h2{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--green);margin-bottom:1.5rem}
-footer{background:var(--dark);color:#fff;padding:2rem 5%;text-align:center;font-size:.85rem}
-</style>
+<title>Karnataka Cafe Patna — Authentic South Indian Restaurant &amp; Dosa</title>
+<meta name="description" content="Karnataka Cafe Patna franchise serves authentic South Indian cuisine — crispy dosas, soft idlis, filter coffee, thalis and more. Visit our outlet in Patna today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231d6b36'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23f4b400'>KC</text></svg>">
 </head>
 <body>
+
+<!-- ============ NAVBAR ============ -->
 <header>
-  <div class="logo">Karnataka Cafe</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="#">Contact Us</a>
-  </nav>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-badge"><i class="fa-solid fa-mug-saucer"></i></span>
+      Karnataka Cafe
+    </a>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit Us</a>
+      <a href="menu.html" class="nav-cta">Order Menu</a>
+    </nav>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
-<section class="hero">
-  <div>
-    <h1>DOSA<br><span>Tradition on Your Plate</span></h1>
-    <a href="menu.html" class="btn">View Our Menu</a>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"><img src="images/hero.jpg" alt="Masala Dosa served at Karnataka Cafe Patna"></div>
+  <div class="hero-content">
+    <span class="eyebrow reveal in d1"><i class="fa-solid fa-location-dot"></i> Patna, Bihar</span>
+    <h1 class="reveal in d2">Authentic <em>South Indian</em> Flavours in the Heart of Patna</h1>
+    <p class="reveal in d3">From crisp, golden dosas to soul-warming filter coffee — experience the true taste of Karnataka, right here in Patna. Fresh, hygienic &amp; prepared daily.</p>
+    <div class="hero-actions reveal in d4">
+      <a href="menu.html" class="btn btn-gold"><span class="ic">&#9782;</span> View Our Menu</a>
+      <a href="#visit" class="btn btn-outline">Find Our Outlet</a>
+    </div>
+    <div class="hero-stats reveal in d5">
+      <div class="stat"><b><span data-count="25" data-suffix="+">0</span></b><span>Dosa Varieties</span></div>
+      <div class="stat"><b><span data-count="60" data-suffix="+">0</span></b><span>Menu Items</span></div>
+      <div class="stat"><b><span data-count="4">0</span></b><span>Branches &amp; Growing</span></div>
+      <div class="stat"><b><span data-count="15">0</span></b><span>Years of Heritage</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-wrap reveal">
+  <div class="marquee">
+    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Tandoori &amp; Starters <i>•</i> Refreshing Shakes <i>•</i></span>
+    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Tandoori &amp; Starters <i>•</i> Refreshing Shakes <i>•</i></span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imgs reveal-left">
+        <img class="main" src="images/interior.jpg" alt="Karnataka Cafe Patna interior">
+        <img class="float" src="images/idli.jpg" alt="Soft idli and vada">
+        <div class="stamp"><b>Est.<br>2011</b><span>Karnataka Cafe</span></div>
+      </div>
+      <div class="about-text reveal-right">
+        <span class="eyebrow">Welcome to Karnataka Cafe</span>
+        <h2 class="section-title">Bringing the True Taste of Karnataka to Patna</h2>
+        <p>Born from over 15 years of passion for authentic South Indian food, Karnataka Cafe has grown from a single outlet into a beloved food revolution. Our <b>Patna franchise</b> brings the same legacy of flavour, freshness and tradition right to your neighbourhood.</p>
+        <p>Every morning, our chefs prepare batter fresh, roast dosas to a perfect golden crisp and brew filter coffee the traditional way — so that every visit tastes like home.</p>
+        <ul class="feature-list">
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> 100% fresh batter &amp; ingredients prepared daily</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Authentic recipes passed down through generations</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Hygienic kitchen with the highest food-safety standards</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> A warm, family-friendly dining experience</li>
+        </ul>
+        <a href="#menu" class="btn btn-green" style="margin-top:1.8rem">Explore Our Menu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
 </section>
-<section class="about" id="about">
-  <h2>Welcome to Karnataka Cafe — Patna</h2>
-  <p>Experience authentic South Indian flavors, from crispy dosas to rich filter coffee. Our Patna franchise brings the same taste and tradition you love from the original Karnataka Cafe.</p>
+
+<!-- ============ MENU PREVIEW ============ -->
+<section class="menu-section" id="menu">
+  <div class="leaf tl">K</div>
+  <div class="leaf br">K</div>
+  <div class="container">
+    <div class="menu-head">
+      <div class="reveal-left">
+        <span class="eyebrow">Our Signature Menu</span>
+        <h2 class="section-title">Crafted to Delight Every Palate</h2>
+        <p class="section-sub">A multi-cuisine menu rooted in South Indian tradition — from classic dosas to hearty thalis, there's something for everyone.</p>
+      </div>
+      <a href="menu.html" class="btn btn-gold reveal-right">Full Menu <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="category-grid">
+      <a href="menu.html#dosa" class="cat-card reveal-scale">
+        <img src="images/dosa.jpg" alt="Dosa">
+        <span class="tagged">Bestseller</span>
+        <div class="cap"><small>Dosa</small><h3>Masala &amp; Special Dosas</h3><span>25+ crispy varieties</span></div>
+      </a>
+      <a href="menu.html#idli" class="cat-card reveal-scale d1">
+        <img src="images/idli.jpg" alt="Idli Vada">
+        <div class="cap"><small>Idli &amp; Vada</small><h3>Soft &amp; Steamy Classics</h3><span>With sambar &amp; chutneys</span></div>
+      </a>
+      <a href="menu.html#beverages" class="cat-card reveal-scale d2">
+        <img src="images/coffee.jpg" alt="Filter Coffee">
+        <div class="cap"><small>Beverages</small><h3>Filter Coffee &amp; Shakes</h3><span>Brewed the traditional way</span></div>
+      </a>
+      <a href="menu.html#thali" class="cat-card reveal-scale d3">
+        <img src="images/thali.jpg" alt="South Indian Thali">
+        <div class="cap"><small>Thali &amp; Combo</small><h3>Royal South Indian Thali</h3><span>A complete meal experience</span></div>
+      </a>
+      <a href="menu.html#rice" class="cat-card reveal-scale d4">
+        <img src="images/biryani.jpg" alt="Veg Biryani">
+        <div class="cap"><small>Rice &amp; Biryani</small><h3>Aromatic Rice Delights</h3><span>Fragrant &amp; flavourful</span></div>
+      </a>
+      <a href="menu.html#snacks" class="cat-card reveal-scale d5">
+        <img src="images/snacks.jpg" alt="Snacks and Starters">
+        <div class="cap"><small>Snacks &amp; Starters</small><h3>Crispy Starters</h3><span>Perfect with your chai</span></div>
+      </a>
+    </div>
+  </div>
 </section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section id="why">
+  <div class="container">
+    <div class="menu-intro reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">Why Choose Us</span>
+      <h2 class="section-title">Good Food, Good Mood, Every Day</h2>
+      <p>What makes Karnataka Cafe Patna special isn't just the recipes — it's the care, quality and warmth in every single plate we serve.</p>
+    </div>
+    <div class="feature-cards">
+      <div class="fcard reveal d1">
+        <div class="ico"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Authentic Taste</h3>
+        <p>Traditional Karnataka recipes with rich flavours and fresh ingredients, prepared fresh every day.</p>
+      </div>
+      <div class="fcard reveal d2">
+        <div class="ico"><i class="fa-solid fa-hand-sparkles"></i></div>
+        <h3>Fresh &amp; Hygienic</h3>
+        <p>We maintain high hygiene standards and serve freshly cooked meals with quality ingredients.</p>
+      </div>
+      <div class="fcard reveal d3">
+        <div class="ico"><i class="fa-solid fa-chef-hat"></i></div>
+        <h3>Experienced Chefs</h3>
+        <p>Our skilled chefs bring authentic flavours and years of culinary expertise to every dish.</p>
+      </div>
+      <div class="fcard reveal d4">
+        <div class="ico"><i class="fa-solid fa-heart"></i></div>
+        <h3>Quality First</h3>
+        <p>We use carefully selected, quality ingredients to ensure great taste, texture and nutrition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="menu-section" id="gallery" style="background:var(--cream)">
+  <div class="container">
+    <div class="menu-intro reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">A Feast for Your Eyes</span>
+      <h2 class="section-title">From Our Kitchen to Your Plate</h2>
+      <p>A glimpse of the dishes our Patna guests love the most.</p>
+    </div>
+    <div class="gallery">
+      <div class="g-item reveal-scale"><img src="images/dosa.jpg" alt="Masala dosa"></div>
+      <div class="g-item reveal-scale d1"><img src="images/idli.jpg" alt="Idli vada"></div>
+      <div class="g-item reveal-scale d2"><img src="images/coffee.jpg" alt="Filter coffee"></div>
+      <div class="g-item reveal-scale d3"><img src="images/uttapam.jpg" alt="Onion uttapam"></div>
+      <div class="g-item reveal-scale d4"><img src="images/thali.jpg" alt="South Indian thali"></div>
+      <div class="g-item reveal-scale d5"><img src="images/biryani.jpg" alt="Veg biryani"></div>
+      <div class="g-item reveal-scale d6"><img src="images/snacks.jpg" alt="Paneer pakoda"></div>
+      <div class="g-item reveal-scale"><img src="images/dessert.jpg" alt="South Indian sweets"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="reviews">
+  <div class="container">
+    <div class="menu-intro reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">Our Customer Says</span>
+      <h2 class="section-title">Loved by the People of Patna</h2>
+      <p>Don't just take our word for it — here's what our happy guests have to say.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard reveal d1">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>Amazing food and great service! The dosas were crispy, the filter coffee was authentic, and the atmosphere felt warm and welcoming.</p>
+        <div class="person"><div class="avatar">R</div><div><b>Ricky</b><span>Patna Regular</span></div></div>
+      </div>
+      <div class="tcard reveal d2">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>Loved the taste and quality of the food. Everything was fresh, flavourful and served quickly. Highly recommended for South Indian food in Patna.</p>
+        <div class="person"><div class="avatar">M</div><div><b>Ravi Malhotra</b><span>Food Enthusiast</span></div></div>
+      </div>
+      <div class="tcard reveal d3">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>Authentic South Indian flavours at reasonable prices. The idlis were soft, chutneys were delicious, and the overall experience was excellent.</p>
+        <div class="person"><div class="avatar">R</div><div><b>Rajesh Rao</b><span>Local Guest</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT US ============ -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="section-title">Visit Karnataka Cafe Patna</h2>
+      <p class="section-sub">Drop by for a warm meal, or order ahead and collect fresh.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="reveal-left">
+        <div class="info-card">
+          <div class="ico"><i class="fa-solid fa-location-dot"></i></div>
+          <div><b>Our Outlet</b><p>Karnataka Cafe Franchise, Main Road,<br>Patna, Bihar</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ico"><i class="fa-solid fa-clock"></i></div>
+          <div><b>Opening Hours</b><p>Mon – Sun: 7:00 AM – 10:30 PM</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ico"><i class="fa-solid fa-phone"></i></div>
+          <div><b>Call / WhatsApp</b><p><a href="tel:+918130384879">+91 81303 84879</a><br><a href="https://wa.me/918130384879" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p></div>
+        </div>
+        <div class="info-card">
+          <div class="ico"><i class="fa-solid fa-envelope"></i></div>
+          <div><b>Email</b><p><a href="mailto:care@karnatakacafe.in">care@karnatakacafe.in</a></p></div>
+        </div>
+        <div style="margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+          <a href="menu.html" class="btn btn-outline">See Full Menu</a>
+        </div>
+      </div>
+      <div class="visit-map reveal-right">
+        <iframe title="Karnataka Cafe Patna location" src="https://www.google.com/maps?q=Patna%2C%20Bihar&output=embed" loading="lazy"></iframe>
+        <div class="pin"><i class="fa-solid fa-location-dot"></i> Karnataka Cafe — Patna</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band">
+  <div class="container reveal">
+    <h2>Craving a Crispy Dosa Right Now?</h2>
+    <p>Order ahead on WhatsApp and have your favourites ready when you arrive, or drop by our Patna outlet for a fresh, hot meal.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+      <a href="menu.html" class="btn btn-outline">Browse Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <p>Karnataka Cafe Franchise — Patna &copy; 2026</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-badge"><i class="fa-solid fa-mug-saucer"></i></span> Karnataka Cafe</a>
+        <p>Authentic South Indian cuisine in Patna. Fresh dosas, filter coffee and more — served with love since the very beginning.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="menu.html"><i class="fa-solid fa-angle-right"></i> Our Menu</a></li>
+          <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="#visit"><i class="fa-solid fa-angle-right"></i> Visit Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular Dishes</h4>
+        <ul>
+          <li><a href="menu.html#dosa"><i class="fa-solid fa-angle-right"></i> Masala Dosa</a></li>
+          <li><a href="menu.html#idli"><i class="fa-solid fa-angle-right"></i> Idli Vada</a></li>
+          <li><a href="menu.html#thali"><i class="fa-solid fa-angle-right"></i> South Indian Thali</a></li>
+          <li><a href="menu.html#beverages"><i class="fa-solid fa-angle-right"></i> Filter Coffee</a></li>
+          <li><a href="menu.html#rice"><i class="fa-solid fa-angle-right"></i> Veg Biryani</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i> Patna, Bihar</li>
+          <li><i class="fa-solid fa-phone"></i> +91 81303 84879</li>
+          <li><i class="fa-solid fa-envelope"></i> care@karnatakacafe.in</li>
+          <li><i class="fa-solid fa-clock"></i> 7 AM – 10:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Karnataka Cafe Patna Franchise. All rights reserved.</span>
+      <span>Proudly part of the <b>Karnataka Cafe</b> family</span>
+    </div>
+  </div>
 </footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
