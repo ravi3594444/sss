@@ -11,26 +11,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232d4a35'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23b8935a'>KC</text></svg>">
-<script>
-  /* Immediate font initialization to prevent flash */
-  (function(){
-    try {
-      var saved = localStorage.getItem('kc_font_preset');
-      var fonts = {
-        'outfit': {head: "'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif", body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"},
-        'dm-serif': {head: "'DM Serif Display', Georgia, serif", body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"},
-        'poppins': {head: "'Poppins', system-ui, -apple-system, sans-serif", body: "'Inter', system-ui, -apple-system, sans-serif"},
-        'philosopher': {head: "'Philosopher', Georgia, serif", body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"},
-        'cinzel': {head: "'Cinzel', Georgia, serif", body: "'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif"},
-        'playfair': {head: "'Playfair Display', Georgia, serif", body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"}
-      };
-      if(saved && fonts[saved]){
-        document.documentElement.style.setProperty('--font-head', fonts[saved].head);
-        document.documentElement.style.setProperty('--font-body', fonts[saved].body);
-      }
-    } catch(e){}
-  })();
-</script>
 </head>
 <body>
 
@@ -378,82 +358,6 @@
         <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
       </a>
     </div>
-  </div>
-</div>
-
-<!-- ============ FONT CUSTOMIZER WIDGET ============ -->
-<div class="font-customizer" id="fontCustomizer">
-  <button class="font-switcher-btn" id="fontSwitcherBtn" aria-label="Change Website Font">
-    <i class="fa-solid fa-font"></i>
-    <span>Font: <b id="currentFontName">Modern Cafe</b></span>
-    <span class="font-badge">Change</span>
-  </button>
-</div>
-
-<div class="font-modal-backdrop" id="fontModalBackdrop"></div>
-
-<div class="font-modal" id="fontModal" role="dialog" aria-modal="true" aria-labelledby="fontModalTitle">
-  <div class="font-modal-header">
-    <h3 id="fontModalTitle"><i class="fa-solid fa-font"></i> Choose Website Font</h3>
-    <button class="font-modal-close" id="fontModalClose" aria-label="Close font picker">&times;</button>
-  </div>
-  <div class="font-modal-body">
-    <button type="button" class="font-option-card active" data-preset="outfit">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'Outfit',sans-serif">Modern Urban Cafe (Default)</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'Outfit',sans-serif;font-weight:700">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">Outfit (Headings) + Plus Jakarta Sans (Body) &mdash; Sleek, bold &amp; modern</div>
-    </button>
-
-    <button type="button" class="font-option-card" data-preset="dm-serif">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'DM Serif Display',serif">Royal Heritage</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'DM Serif Display',serif">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">DM Serif Display + Plus Jakarta Sans &mdash; Authentic South Indian heritage</div>
-    </button>
-
-    <button type="button" class="font-option-card" data-preset="poppins">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'Poppins',sans-serif">Vibrant &amp; Bold</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'Poppins',sans-serif;font-weight:700">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">Poppins + Inter &mdash; Warm, lively &amp; modern fast-casual</div>
-    </button>
-
-    <button type="button" class="font-option-card" data-preset="philosopher">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'Philosopher',serif">South Indian Classic</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'Philosopher',serif;font-weight:700">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">Philosopher + Plus Jakarta Sans &mdash; Artistic traditional curves</div>
-    </button>
-
-    <button type="button" class="font-option-card" data-preset="cinzel">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'Cinzel',serif">Imperial Grandeur</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'Cinzel',serif;font-weight:700">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">Cinzel + Outfit &mdash; Regal fine dining luxury</div>
-    </button>
-
-    <button type="button" class="font-option-card" data-preset="playfair">
-      <div class="card-head">
-        <span class="font-title" style="font-family:'Playfair Display',serif">Editorial Gourmet</span>
-        <span class="active-pill"><i class="fa-solid fa-check"></i> Active</span>
-      </div>
-      <div class="font-sample" style="font-family:'Playfair Display',serif;font-weight:700">Crispy Masala Dosa &amp; Filter Coffee</div>
-      <div class="font-desc">Playfair Display + Plus Jakarta Sans &mdash; Classic culinary magazine look</div>
-    </button>
-  </div>
-  <div class="font-modal-footer">
-    <span>💡 Font choice is automatically saved across pages.</span>
   </div>
 </div>
 

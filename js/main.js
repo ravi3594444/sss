@@ -427,7 +427,6 @@
     if(e.key === 'Escape'){
       closeDishModal();
       closeLightbox();
-      closeFontModal();
       closeReserveModal();
     }
   });
@@ -448,126 +447,6 @@
     sections.forEach(function(s){ so.observe(s); });
   }
 
-  /* ---------- Font Switcher & Presets ---------- */
-  var fontPresets = {
-    'outfit': {
-      id: 'outfit',
-      name: 'Modern Cafe',
-      head: "'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
-      body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-    },
-    'dm-serif': {
-      id: 'dm-serif',
-      name: 'Royal Heritage',
-      head: "'DM Serif Display', Georgia, serif",
-      body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-    },
-    'poppins': {
-      id: 'poppins',
-      name: 'Vibrant & Bold',
-      head: "'Poppins', system-ui, -apple-system, sans-serif",
-      body: "'Inter', system-ui, -apple-system, sans-serif"
-    },
-    'philosopher': {
-      id: 'philosopher',
-      name: 'South Indian Classic',
-      head: "'Philosopher', Georgia, serif",
-      body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-    },
-    'cinzel': {
-      id: 'cinzel',
-      name: 'Imperial Grandeur',
-      head: "'Cinzel', Georgia, serif",
-      body: "'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif"
-    },
-    'playfair': {
-      id: 'playfair',
-      name: 'Editorial Gourmet',
-      head: "'Playfair Display', Georgia, serif",
-      body: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-    }
-  };
-
-  function setWebsiteFont(presetKey, persist){
-    var preset = fontPresets[presetKey] || fontPresets['playfair'];
-    document.documentElement.style.setProperty('--font-head', preset.head);
-    document.documentElement.style.setProperty('--font-body', preset.body);
-
-    var labelEl = document.getElementById('currentFontName');
-    if(labelEl) labelEl.textContent = preset.name;
-
-    var optionCards = document.querySelectorAll('.font-option-card');
-    optionCards.forEach(function(card){
-      if(card.getAttribute('data-preset') === preset.id){
-        card.classList.add('active');
-      } else {
-        card.classList.remove('active');
-      }
-    });
-
-    if(persist !== false){
-      try {
-        localStorage.setItem('kc_font_preset', preset.id);
-      } catch(e){}
-    }
-  }
-
-  try {
-    var savedPreset = localStorage.getItem('kc_font_preset') || 'playfair';
-    setWebsiteFont(savedPreset, false);
-  } catch(e){
-    setWebsiteFont('playfair', false);
-  }
-
-  var switcherBtn = document.getElementById('fontSwitcherBtn');
-  var fontModal = document.getElementById('fontModal');
-  var modalBackdrop = document.getElementById('fontModalBackdrop');
-  var modalCloseBtn = document.getElementById('fontModalClose');
-
-  function openFontModal(){
-    if(!fontModal) return;
-    fontModal.classList.add('open');
-    if(modalBackdrop) modalBackdrop.classList.add('open');
-  }
-
-  function closeFontModal(){
-    if(!fontModal) return;
-    fontModal.classList.remove('open');
-    if(modalBackdrop) modalBackdrop.classList.remove('open');
-  }
-
-  if(switcherBtn){
-    switcherBtn.addEventListener('click', function(e){
-      e.stopPropagation();
-      if(fontModal && fontModal.classList.contains('open')){
-        closeFontModal();
-      } else {
-        openFontModal();
-      }
-    });
-  }
-
-  if(modalCloseBtn){
-    modalCloseBtn.addEventListener('click', function(e){
-      e.stopPropagation();
-      closeFontModal();
-    });
-  }
-
-  if(modalBackdrop){
-    modalBackdrop.addEventListener('click', closeFontModal);
-  }
-
-  var fontCards = document.querySelectorAll('.font-option-card');
-  fontCards.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var key = btn.getAttribute('data-preset');
-      setWebsiteFont(key, true);
-      setTimeout(closeFontModal, 280);
-    });
-  });
-})();
-
   /* ---------- HERO BACKGROUND SLIDESHOW ---------- */
   var heroSlides = document.querySelectorAll('#heroBgSlider .slide');
   if(heroSlides.length > 1){
@@ -578,3 +457,4 @@
       heroSlides[currentSlide].classList.add('active');
     }, 4500); // Change image every 4.5 seconds
   }
+})();
