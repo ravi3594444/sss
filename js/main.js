@@ -489,7 +489,7 @@
   };
 
   function setWebsiteFont(presetKey, persist){
-    var preset = fontPresets[presetKey] || fontPresets['outfit'];
+    var preset = fontPresets[presetKey] || fontPresets['playfair'];
     document.documentElement.style.setProperty('--font-head', preset.head);
     document.documentElement.style.setProperty('--font-body', preset.body);
 
@@ -513,10 +513,10 @@
   }
 
   try {
-    var savedPreset = localStorage.getItem('kc_font_preset') || 'outfit';
+    var savedPreset = localStorage.getItem('kc_font_preset') || 'playfair';
     setWebsiteFont(savedPreset, false);
   } catch(e){
-    setWebsiteFont('outfit', false);
+    setWebsiteFont('playfair', false);
   }
 
   var switcherBtn = document.getElementById('fontSwitcherBtn');
