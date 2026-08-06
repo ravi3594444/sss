@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231d6b36'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23f4b400'>KC</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231b5e20'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23f4b400'>KC</text></svg>">
 <script>
   /* Immediate font initialization to prevent flash */
   (function(){
@@ -34,6 +34,9 @@
 </head>
 <body>
 
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress"></div>
+
 <!-- ============ NAVBAR ============ -->
 <header>
   <div class="container nav">
@@ -44,10 +47,11 @@
     <nav class="nav-links">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
+      <a href="#regional">Cuisines</a>
       <a href="#menu">Menu</a>
       <a href="#gallery">Gallery</a>
       <a href="#visit">Visit Us</a>
-      <a href="menu.html" class="nav-cta">Order Menu</a>
+      <a href="#" class="btn-reserve-trigger nav-cta"><i class="fa-solid fa-calendar-check"></i> Reserve Table</a>
     </nav>
     <button class="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -58,19 +62,37 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
   <div class="hero-bg"><img src="images/hero.jpg" alt="Masala Dosa served at Karnataka Cafe Patna"></div>
+  
+  <!-- Floating Pure Veg Seal Badge -->
+  <div class="floating-veg-seal">
+    <span class="veg-dot"></span>
+    100% Pure Veg Fine Dining
+  </div>
+
   <div class="hero-content">
-    <span class="eyebrow reveal in d1"><i class="fa-solid fa-location-dot"></i> Patna, Bihar</span>
-    <h1 class="reveal in d2">Authentic <em>South Indian</em> Flavours in the Heart of Patna</h1>
-    <p class="reveal in d3">From crisp, golden dosas to soul-warming filter coffee — experience the true taste of Karnataka, right here in Patna. Fresh, hygienic &amp; prepared daily.</p>
+    <span class="eyebrow reveal in d1"><i class="fa-solid fa-location-dot"></i> Patna Franchise · Bihar</span>
+    <h1 class="reveal in d2">
+      <span class="pop-words">A Culinary Experience of</span> <em class="shimmer-text">South India</em> <span class="pop-words">in Patna</span>
+    </h1>
+    <p class="reveal in d3">Savour South India's finest flavours — from crisp golden dosas and soft idlis to traditional filter coffee and royal thalis. Fresh, hygienic &amp; prepared daily amidst warm South Indian hospitality.</p>
+    
     <div class="hero-actions reveal in d4">
-      <a href="menu.html" class="btn btn-gold"><span class="ic">&#9782;</span> View Our Menu</a>
-      <a href="#visit" class="btn btn-outline">Find Our Outlet</a>
+      <a href="#" class="btn btn-gold btn-reserve-trigger"><i class="fa-solid fa-utensils"></i> Reserve A Table</a>
+      <a href="menu.html" class="btn btn-outline"><i class="fa-solid fa-book-open"></i> View Interactive Menu</a>
     </div>
+
+    <!-- Partner Dine-In Badges (Sasive Style) -->
+    <div class="partner-badges reveal in d5">
+      <span class="partner-badge"><i class="fa-solid fa-square-check" style="color:var(--gold)"></i> Dine-In &amp; Takeaway</span>
+      <span class="partner-badge"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp Instant Order</span>
+      <span class="partner-badge"><i class="fa-solid fa-star" style="color:var(--gold)"></i> 4.8★ Rated in Patna</span>
+    </div>
+
     <div class="hero-stats reveal in d5">
       <div class="stat"><b><span data-count="25" data-suffix="+">0</span></b><span>Dosa Varieties</span></div>
       <div class="stat"><b><span data-count="60" data-suffix="+">0</span></b><span>Menu Items</span></div>
       <div class="stat"><b><span data-count="4">0</span></b><span>Branches &amp; Growing</span></div>
-      <div class="stat"><b><span data-count="15">0</span></b><span>Years of Heritage</span></div>
+      <div class="stat"><b><span data-count="15" data-suffix="+">0</span></b><span>Years of Heritage</span></div>
     </div>
   </div>
   <div class="scroll-hint"></div>
@@ -79,8 +101,8 @@
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-wrap reveal">
   <div class="marquee">
-    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Tandoori &amp; Starters <i>•</i> Refreshing Shakes <i>•</i></span>
-    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Tandoori &amp; Starters <i>•</i> Refreshing Shakes <i>•</i></span>
+    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Andhra Ghee Podi <i>•</i> Malabar Delights <i>•</i> Refreshing Shakes <i>•</i></span>
+    <span><i>•</i> Crispy Masala Dosa <i>•</i> Authentic Filter Coffee <i>•</i> Soft Idli Vada <i>•</i> Royal South Indian Thali <i>•</i> Andhra Ghee Podi <i>•</i> Malabar Delights <i>•</i> Refreshing Shakes <i>•</i></span>
   </div>
 </div>
 
@@ -95,16 +117,70 @@
       </div>
       <div class="about-text reveal-right">
         <span class="eyebrow">Welcome to Karnataka Cafe</span>
-        <h2 class="section-title">Bringing the True Taste of Karnataka to Patna</h2>
-        <p>Born from over 15 years of passion for authentic South Indian food, Karnataka Cafe has grown from a single outlet into a beloved food revolution. Our <b>Patna franchise</b> brings the same legacy of flavour, freshness and tradition right to your neighbourhood.</p>
-        <p>Every morning, our chefs prepare batter fresh, roast dosas to a perfect golden crisp and brew filter coffee the traditional way — so that every visit tastes like home.</p>
+        <h2 class="section-title pop-text">Dine Amidst Nature's Tranquil Beauty &amp; Warm Serenity</h2>
+        <div class="brass-divider" style="margin:1rem 0;justify-content:flex-start"><i class="fa-solid fa-seedling"></i></div>
+        <p>Born from over 15 years of passion for authentic South Indian food, Karnataka Cafe presents a refined interpretation of South Indian cuisine, marrying traditional flavors with modern culinary elegance.</p>
+        <p>Step into our Patna outlet, where warm ambient hospitality envelops you. Every morning, our chefs prepare batter fresh, roast dosas to a golden crisp and brew filter coffee the traditional way.</p>
         <ul class="feature-list">
-          <li><span class="dot"><i class="fa-solid fa-check"></i></span> 100% fresh batter &amp; ingredients prepared daily</li>
-          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Authentic recipes passed down through generations</li>
-          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Hygienic kitchen with the highest food-safety standards</li>
-          <li><span class="dot"><i class="fa-solid fa-check"></i></span> A warm, family-friendly dining experience</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> 100% fresh batter &amp; brass-style authentic preparations</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Authentic regional recipes from Karnataka, Andhra, Malabar &amp; Tamil Nadu</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Highest food safety &amp; hygiene standards</li>
+          <li><span class="dot"><i class="fa-solid fa-check"></i></span> Warm family-friendly fine dining experience</li>
         </ul>
-        <a href="#menu" class="btn btn-green" style="margin-top:1.8rem">Explore Our Menu <i class="fa-solid fa-arrow-right"></i></a>
+        <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#" class="btn btn-green btn-reserve-trigger"><i class="fa-solid fa-calendar-check"></i> Book Table</a>
+          <a href="menu.html" class="btn btn-outline" style="border-color:var(--green);color:var(--green)">Explore Full Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGIONAL CUISINES SHOWCASE (SASIVE STYLE) ============ -->
+<section class="regional-section" id="regional">
+  <div class="container">
+    <div class="menu-intro reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">Gastronomic Heritage</span>
+      <h2 class="section-title pop-text">Discover Exquisite Flavours From South India's Heartland</h2>
+      <div class="brass-divider"><i class="fa-solid fa-leaf"></i></div>
+      <p>Embark on a culinary adventure with us — from the crisp dosas of Karnataka to the spicy delicacies of Andhra and aromatic curries of Kerala.</p>
+    </div>
+
+    <div class="regional-grid">
+      <div class="regional-card reveal-scale">
+        <div class="regional-card-img"><img src="images/dosa.jpg" alt="Karnataka Classics"></div>
+        <div class="regional-card-body">
+          <span class="regional-card-tag">Karnataka</span>
+          <h3>Crispy Dosas &amp; Filter Coffee</h3>
+          <p>Golden ghee-roast dosas, fluffy rava idlis, and traditional frothy filter coffee brewed to perfection.</p>
+        </div>
+      </div>
+
+      <div class="regional-card reveal-scale d1">
+        <div class="regional-card-img"><img src="images/idli.jpg" alt="Andhra Flavours"></div>
+        <div class="regional-card-body">
+          <span class="regional-card-tag">Andhra</span>
+          <h3>Ghee Podi &amp; Spicy Delicacies</h3>
+          <p>Fiery gunpowder podi tossed idlis, spicy chutneys, and rich aromatic tempering.</p>
+        </div>
+      </div>
+
+      <div class="regional-card reveal-scale d2">
+        <div class="regional-card-img"><img src="images/thali.jpg" alt="Malabar & Kerala"></div>
+        <div class="regional-card-body">
+          <span class="regional-card-tag">Malabar &amp; Kerala</span>
+          <h3>Aromatic Coconut &amp; Meals</h3>
+          <p>Comforting coconut rice, soft neer-style textures, and wholesome traditional rasam.</p>
+        </div>
+      </div>
+
+      <div class="regional-card reveal-scale d3">
+        <div class="regional-card-img"><img src="images/biryani.jpg" alt="Tamil Nadu & Chettinad"></div>
+        <div class="regional-card-body">
+          <span class="regional-card-tag">Tamil Nadu</span>
+          <h3>Royal Thalis &amp; Biryanis</h3>
+          <p>Complete executive meals with authentic sambar, rasam, curd, appalam, and sweet desserts.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -117,38 +193,41 @@
   <div class="container">
     <div class="menu-head">
       <div class="reveal-left">
-        <span class="eyebrow">Our Signature Menu</span>
-        <h2 class="section-title">Crafted to Delight Every Palate</h2>
-        <p class="section-sub">A multi-cuisine menu rooted in South Indian tradition — from classic dosas to hearty thalis, there's something for everyone.</p>
+        <span class="eyebrow">Our Signature Categories</span>
+        <h2 class="section-title pop-text">Crafted to Delight Every Palate</h2>
+        <p class="section-sub">A multi-cuisine menu rooted in South Indian tradition — from classic dosas to hearty thalis, click any item to preview details &amp; order on WhatsApp!</p>
       </div>
-      <a href="menu.html" class="btn btn-gold reveal-right">Full Menu <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="menu.html" class="btn btn-gold reveal-right">Full Interactive Menu <i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <div class="category-grid">
-      <a href="menu.html#dosa" class="cat-card reveal-scale">
+      <div class="cat-card reveal-scale">
         <img src="images/dosa.jpg" alt="Dosa">
-        <span class="tagged">Bestseller</span>
-        <div class="cap"><small>Dosa</small><h3>Masala &amp; Special Dosas</h3><span>25+ crispy varieties</span></div>
-      </a>
-      <a href="menu.html#idli" class="cat-card reveal-scale d1">
+        <span class="tagged"><i class="fa-solid fa-star"></i> Bestseller</span>
+        <div class="cap"><small>Dosa Category</small><h3>Masala &amp; Special Dosas</h3><span>25+ crispy varieties</span></div>
+      </div>
+      <div class="cat-card reveal-scale d1">
         <img src="images/idli.jpg" alt="Idli Vada">
-        <div class="cap"><small>Idli &amp; Vada</small><h3>Soft &amp; Steamy Classics</h3><span>With sambar &amp; chutneys</span></div>
-      </a>
-      <a href="menu.html#beverages" class="cat-card reveal-scale d2">
+        <span class="tagged"><i class="fa-solid fa-leaf"></i> Fresh Daily</span>
+        <div class="cap"><small>Idli &amp; Vada</small><h3>Soft &amp; Steamy Classics</h3><span>With sambar &amp; 3 chutneys</span></div>
+      </div>
+      <div class="cat-card reveal-scale d2">
         <img src="images/coffee.jpg" alt="Filter Coffee">
-        <div class="cap"><small>Beverages</small><h3>Filter Coffee &amp; Shakes</h3><span>Brewed the traditional way</span></div>
-      </a>
-      <a href="menu.html#thali" class="cat-card reveal-scale d3">
+        <span class="tagged"><i class="fa-solid fa-mug-hot"></i> Traditional</span>
+        <div class="cap"><small>Beverages</small><h3>Filter Coffee &amp; Shakes</h3><span>Brewed the authentic way</span></div>
+      </div>
+      <div class="cat-card reveal-scale d3">
         <img src="images/thali.jpg" alt="South Indian Thali">
-        <div class="cap"><small>Thali &amp; Combo</small><h3>Royal South Indian Thali</h3><span>A complete meal experience</span></div>
-      </a>
-      <a href="menu.html#rice" class="cat-card reveal-scale d4">
+        <span class="tagged"><i class="fa-solid fa-crown"></i> Royal Meal</span>
+        <div class="cap"><small>Thali &amp; Combos</small><h3>Royal South Indian Thali</h3><span>A complete meal experience</span></div>
+      </div>
+      <div class="cat-card reveal-scale d4">
         <img src="images/biryani.jpg" alt="Veg Biryani">
         <div class="cap"><small>Rice &amp; Biryani</small><h3>Aromatic Rice Delights</h3><span>Fragrant &amp; flavourful</span></div>
-      </a>
-      <a href="menu.html#snacks" class="cat-card reveal-scale d5">
+      </div>
+      <div class="cat-card reveal-scale d5">
         <img src="images/snacks.jpg" alt="Snacks and Starters">
         <div class="cap"><small>Snacks &amp; Starters</small><h3>Crispy Starters</h3><span>Perfect with your chai</span></div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -158,28 +237,29 @@
   <div class="container">
     <div class="menu-intro reveal">
       <span class="eyebrow" style="justify-content:center;display:inline-flex">Why Choose Us</span>
-      <h2 class="section-title">Good Food, Good Mood, Every Day</h2>
+      <h2 class="section-title pop-text">Good Food, Good Mood, Every Day</h2>
+      <div class="brass-divider"><i class="fa-solid fa-shield-halved"></i></div>
       <p>What makes Karnataka Cafe Patna special isn't just the recipes — it's the care, quality and warmth in every single plate we serve.</p>
     </div>
     <div class="feature-cards">
       <div class="fcard reveal d1">
         <div class="ico"><i class="fa-solid fa-seedling"></i></div>
-        <h3>Authentic Taste</h3>
+        <h3 class="pop-text">Authentic Taste</h3>
         <p>Traditional Karnataka recipes with rich flavours and fresh ingredients, prepared fresh every day.</p>
       </div>
       <div class="fcard reveal d2">
         <div class="ico"><i class="fa-solid fa-hand-sparkles"></i></div>
-        <h3>Fresh &amp; Hygienic</h3>
+        <h3 class="pop-text">Fresh &amp; Hygienic</h3>
         <p>We maintain high hygiene standards and serve freshly cooked meals with quality ingredients.</p>
       </div>
       <div class="fcard reveal d3">
         <div class="ico"><i class="fa-solid fa-kitchen-set"></i></div>
-        <h3>Experienced Chefs</h3>
+        <h3 class="pop-text">Experienced Chefs</h3>
         <p>Our skilled chefs bring authentic flavours and years of culinary expertise to every dish.</p>
       </div>
       <div class="fcard reveal d4">
         <div class="ico"><i class="fa-solid fa-heart"></i></div>
-        <h3>Quality First</h3>
+        <h3 class="pop-text">Quality First</h3>
         <p>We use carefully selected, quality ingredients to ensure great taste, texture and nutrition.</p>
       </div>
     </div>
@@ -191,87 +271,89 @@
   <div class="container">
     <div class="menu-intro reveal">
       <span class="eyebrow" style="justify-content:center;display:inline-flex">A Feast for Your Eyes</span>
-      <h2 class="section-title">From Our Kitchen to Your Plate</h2>
-      <p>A glimpse of the dishes our Patna guests love the most.</p>
+      <h2 class="section-title pop-text">From Our Kitchen to Your Plate</h2>
+      <div class="brass-divider"><i class="fa-solid fa-camera"></i></div>
+      <p>Click any dish photo to view in full resolution lightbox!</p>
     </div>
     <div class="gallery">
-      <div class="g-item reveal-scale"><img src="images/dosa.jpg" alt="Masala dosa"></div>
-      <div class="g-item reveal-scale d1"><img src="images/idli.jpg" alt="Idli vada"></div>
-      <div class="g-item reveal-scale d2"><img src="images/coffee.jpg" alt="Filter coffee"></div>
-      <div class="g-item reveal-scale d3"><img src="images/uttapam.jpg" alt="Onion uttapam"></div>
-      <div class="g-item reveal-scale d4"><img src="images/thali.jpg" alt="South Indian thali"></div>
-      <div class="g-item reveal-scale d5"><img src="images/biryani.jpg" alt="Veg biryani"></div>
-      <div class="g-item reveal-scale d6"><img src="images/snacks.jpg" alt="Paneer pakoda"></div>
-      <div class="g-item reveal-scale"><img src="images/dessert.jpg" alt="South Indian sweets"></div>
+      <div class="g-item reveal-scale"><img src="images/dosa.jpg" alt="Crispy Masala Dosa"></div>
+      <div class="g-item reveal-scale d1"><img src="images/idli.jpg" alt="Steamed Soft Idli &amp; Vada"></div>
+      <div class="g-item reveal-scale d2"><img src="images/coffee.jpg" alt="Authentic South Indian Filter Coffee"></div>
+      <div class="g-item reveal-scale d3"><img src="images/uttapam.jpg" alt="Fresh Onion Uttapam"></div>
+      <div class="g-item reveal-scale d4"><img src="images/thali.jpg" alt="Royal South Indian Executive Thali"></div>
+      <div class="g-item reveal-scale d5"><img src="images/biryani.jpg" alt="Special South Indian Veg Biryani"></div>
+      <div class="g-item reveal-scale d6"><img src="images/snacks.jpg" alt="Crispy Paneer &amp; Veg Pakoda"></div>
+      <div class="g-item reveal-scale"><img src="images/dessert.jpg" alt="Traditional South Indian Sweets"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
+<!-- ============ TESTIMONIALS (SASIVE REVIEWS STYLE) ============ -->
 <section id="reviews">
   <div class="container">
     <div class="menu-intro reveal">
-      <span class="eyebrow" style="justify-content:center;display:inline-flex">Our Customer Says</span>
-      <h2 class="section-title">Loved by the People of Patna</h2>
-      <p>Don't just take our word for it — here's what our happy guests have to say.</p>
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">Guest Experiences</span>
+      <h2 class="section-title pop-text">Here's What Our Valued Customers Have to Say...</h2>
+      <div class="brass-divider"><i class="fa-solid fa-quote-left"></i></div>
+      <p>Don't just take our word for it — here's what our happy guests in Patna have to say about our food &amp; ambiance.</p>
     </div>
     <div class="testi-grid">
       <div class="tcard reveal d1">
         <div class="quote">"</div>
         <div class="stars">★★★★★</div>
-        <p>Amazing food and great service! The dosas were crispy, the filter coffee was authentic, and the atmosphere felt warm and welcoming.</p>
-        <div class="person"><div class="avatar">R</div><div><b>Ricky</b><span>Patna Regular</span></div></div>
+        <p>I'm so overwhelmed by this place! The ambiance was so pleasant, smooth background music, and the dosas were golden &amp; crispy. Filter coffee felt like authentic South India in Patna.</p>
+        <div class="person"><div class="avatar">R</div><div><b>Supriya Gowda</b><span>Patna Regular</span></div></div>
       </div>
       <div class="tcard reveal d2">
         <div class="quote">"</div>
         <div class="stars">★★★★★</div>
-        <p>Loved the taste and quality of the food. Everything was fresh, flavourful and served quickly. Highly recommended for South Indian food in Patna.</p>
+        <p>One of the most beautiful South Indian places in Patna. Located centrally, very peaceful ambiance. Ghee Podi Idli and Masala Dosa were really tasty and authentic. Spice levels were perfect!</p>
         <div class="person"><div class="avatar">M</div><div><b>Ravi Malhotra</b><span>Food Enthusiast</span></div></div>
       </div>
       <div class="tcard reveal d3">
         <div class="quote">"</div>
         <div class="stars">★★★★★</div>
-        <p>Authentic South Indian flavours at reasonable prices. The idlis were soft, chutneys were delicious, and the overall experience was excellent.</p>
-        <div class="person"><div class="avatar">R</div><div><b>Rajesh Rao</b><span>Local Guest</span></div></div>
+        <p>Such a lovely place to dine. The food, ambiance and service are top class. The idlis were soft, chutneys were delicious, and overall a great family outing spot.</p>
+        <div class="person"><div class="avatar">G</div><div><b>Ganesh Kumar</b><span>Local Guest</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ VISIT US ============ -->
+<!-- ============ VISIT US / LOCATION ============ -->
 <section class="visit" id="visit">
   <div class="container">
     <div class="reveal">
-      <span class="eyebrow">Find Us</span>
-      <h2 class="section-title">Visit Karnataka Cafe Patna</h2>
-      <p class="section-sub">Drop by for a warm meal, or order ahead and collect fresh.</p>
+      <span class="eyebrow">Our Location</span>
+      <h2 class="section-title pop-text" style="color:#fff">Visit Karnataka Cafe Patna</h2>
+      <p class="section-sub">Drop by for a warm meal, or book a table ahead and enjoy fine South Indian dining.</p>
     </div>
     <div class="visit-grid">
       <div class="reveal-left">
         <div class="info-card">
           <div class="ico"><i class="fa-solid fa-location-dot"></i></div>
-          <div><b>Our Outlet</b><p>Karnataka Cafe Franchise, Main Road,<br>Patna, Bihar</p></div>
+          <div><b>Outlet Address</b><p>Karnataka Cafe Franchise, Main Road,<br>Patna, Bihar 800001</p></div>
         </div>
         <div class="info-card">
           <div class="ico"><i class="fa-solid fa-clock"></i></div>
-          <div><b>Opening Hours</b><p>Mon – Sun: 7:00 AM – 10:30 PM</p></div>
+          <div><b>Opening Hours</b><p>Open All Days · 7:00 AM to 10:30 PM</p></div>
         </div>
         <div class="info-card">
           <div class="ico"><i class="fa-solid fa-phone"></i></div>
-          <div><b>Call / WhatsApp</b><p><a href="tel:+918130384879">+91 81303 84879</a><br><a href="https://wa.me/918130384879" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p></div>
+          <div><b>Call / Reservations</b><p><a href="tel:+918130384879">+91 81303 84879</a><br><a href="https://wa.me/918130384879" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p></div>
         </div>
         <div class="info-card">
           <div class="ico"><i class="fa-solid fa-envelope"></i></div>
           <div><b>Email</b><p><a href="mailto:care@karnatakacafe.in">care@karnatakacafe.in</a></p></div>
         </div>
         <div style="margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap">
-          <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-          <a href="menu.html" class="btn btn-outline">See Full Menu</a>
+          <a href="#" class="btn btn-gold btn-reserve-trigger"><i class="fa-solid fa-calendar-check"></i> Book A Table</a>
+          <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
         </div>
       </div>
       <div class="visit-map reveal-right">
         <iframe title="Karnataka Cafe Patna location" src="https://www.google.com/maps?q=Patna%2C%20Bihar&output=embed" loading="lazy"></iframe>
-        <div class="pin"><i class="fa-solid fa-location-dot"></i> Karnataka Cafe — Patna</div>
+        <div class="pin"><i class="fa-solid fa-location-dot"></i> Karnataka Cafe — Patna Franchise</div>
       </div>
     </div>
   </div>
@@ -280,11 +362,11 @@
 <!-- ============ CTA ============ -->
 <section class="cta-band">
   <div class="container reveal">
-    <h2>Craving a Crispy Dosa Right Now?</h2>
-    <p>Order ahead on WhatsApp and have your favourites ready when you arrive, or drop by our Patna outlet for a fresh, hot meal.</p>
+    <h2 class="pop-text" style="color:#fff">Reserve Your Table or Order Online Today</h2>
+    <p>Experience authentic South Indian hospitality in Patna. Reserve your table ahead or place a quick WhatsApp order for takeaway/delivery.</p>
     <div class="cta-actions">
-      <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
-      <a href="menu.html" class="btn btn-outline">Browse Menu</a>
+      <a href="#" class="btn btn-gold btn-reserve-trigger"><i class="fa-solid fa-calendar-check"></i> Reserve Table Now</a>
+      <a href="https://wa.me/918130384879" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -299,7 +381,7 @@
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/918130384879" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
         </div>
       </div>
@@ -308,6 +390,7 @@
         <ul>
           <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="#regional"><i class="fa-solid fa-angle-right"></i> Regional Cuisines</a></li>
           <li><a href="menu.html"><i class="fa-solid fa-angle-right"></i> Our Menu</a></li>
           <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="#visit"><i class="fa-solid fa-angle-right"></i> Visit Us</a></li>
@@ -326,7 +409,7 @@
       <div>
         <h4>Get In Touch</h4>
         <ul>
-          <li><i class="fa-solid fa-location-dot"></i> Patna, Bihar</li>
+          <li><i class="fa-solid fa-location-dot"></i> Patna, Bihar 800001</li>
           <li><i class="fa-solid fa-phone"></i> +91 81303 84879</li>
           <li><i class="fa-solid fa-envelope"></i> care@karnatakacafe.in</li>
           <li><i class="fa-solid fa-clock"></i> 7 AM – 10:30 PM</li>
@@ -339,6 +422,108 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ TABLE RESERVATION MODAL (SASIVE STYLE) ============ -->
+<div class="reserve-modal-backdrop" id="reserveModalBackdrop"></div>
+<div class="reserve-modal" id="reserveModal" role="dialog" aria-modal="true">
+  <div class="reserve-modal-header">
+    <h3><i class="fa-solid fa-calendar-check" style="color:var(--gold)"></i> Reserve A Table at Patna Outlet</h3>
+    <button class="reserve-modal-close" id="reserveModalClose" aria-label="Close modal">&times;</button>
+  </div>
+  <div class="reserve-modal-body">
+    <form class="reserve-form" id="reserveForm">
+      <div class="form-group">
+        <label for="resName">Full Name *</label>
+        <input type="text" id="resName" required placeholder="e.g. Rahul Sharma">
+      </div>
+      <div class="form-group">
+        <label for="resPhone">Phone Number *</label>
+        <input type="tel" id="resPhone" required placeholder="e.g. +91 98765 43210">
+      </div>
+      <div class="reserve-form-row">
+        <div class="form-group">
+          <label for="resDate">Reservation Date *</label>
+          <input type="date" id="resDate" required>
+        </div>
+        <div class="form-group">
+          <label for="resTime">Time Slot *</label>
+          <select id="resTime" required>
+            <option value="12:00 PM">12:00 PM (Lunch)</option>
+            <option value="01:00 PM">01:00 PM (Lunch)</option>
+            <option value="02:00 PM">02:00 PM (Lunch)</option>
+            <option value="07:00 PM">07:00 PM (Dinner)</option>
+            <option value="08:00 PM">08:00 PM (Dinner)</option>
+            <option value="09:00 PM">09:00 PM (Dinner)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="resGuests">Number of Guests *</label>
+        <select id="resGuests" required>
+          <option value="1">1 Person</option>
+          <option value="2" selected>2 Persons</option>
+          <option value="4">4 Persons (Family Table)</option>
+          <option value="6">6 Persons (Large Family)</option>
+          <option value="8+">8+ Persons (Party / Group)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem">
+        <i class="fa-brands fa-whatsapp"></i> Confirm &amp; Reserve via WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ FLOATING ACTION BUTTONS ============ -->
+<div class="floating-actions-wrap">
+  <button class="float-btn float-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+  <a href="https://wa.me/918130384879?text=Hi%20Karnataka%20Cafe%20Patna!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="float-btn float-wa" aria-label="Order on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="tooltip">Chat &amp; Order on WhatsApp</span>
+  </a>
+</div>
+
+<!-- ============ DISH QUICK VIEW MODAL ============ -->
+<div class="dish-modal-backdrop" id="dishModalBackdrop"></div>
+<div class="dish-modal" id="dishModal" role="dialog" aria-modal="true">
+  <div class="dish-modal-img">
+    <img id="dishModalImg" src="images/dosa.jpg" alt="Dish photo">
+    <button class="dish-modal-close" id="dishModalClose" aria-label="Close modal">&times;</button>
+    <span class="dish-modal-badge" id="dishModalBadge">Bestseller</span>
+  </div>
+  <div class="dish-modal-body">
+    <div class="dish-modal-header">
+      <h3 class="dish-modal-title" id="dishModalTitle">Crispy Masala Dosa</h3>
+      <span class="dish-modal-price" id="dishModalPrice">₹110</span>
+    </div>
+    <p class="dish-modal-desc" id="dishModalDesc">Golden crispy dosa stuffed with spiced potato masala, served with piping hot sambar &amp; 3 fresh coconut chutneys.</p>
+    <div class="dish-modal-highlights">
+      <div><i class="fa-solid fa-leaf"></i> 100% Pure Veg</div>
+      <div><i class="fa-solid fa-fire"></i> Served Hot &amp; Fresh</div>
+      <div><i class="fa-solid fa-clock"></i> Prep Time: 10-15 min</div>
+      <div><i class="fa-solid fa-heart"></i> Traditional Recipe</div>
+    </div>
+    <div class="dish-modal-footer">
+      <div class="qty-selector">
+        <button class="qty-btn" id="qtyMinus">-</button>
+        <span class="qty-val" id="dishQtyVal">1</span>
+        <button class="qty-btn" id="qtyPlus">+</button>
+      </div>
+      <a href="#" id="dishWaBtn" target="_blank" rel="noopener" class="btn btn-gold" style="flex:1;justify-content:center">
+        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GALLERY LIGHTBOX MODAL ============ -->
+<div class="lightbox-backdrop" id="lightboxModal">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="images/dosa.jpg" alt="Gallery detail">
+    <div class="lightbox-caption" id="lightboxCaption">Authentic South Indian Cuisine</div>
+  </div>
+</div>
 
 <!-- ============ FONT CUSTOMIZER WIDGET ============ -->
 <div class="font-customizer" id="fontCustomizer">
@@ -417,6 +602,13 @@
 </div>
 
 <script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Set default reservation date to tomorrow
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var dInput = document.getElementById('resDate');
+  if(dInput) dInput.value = tomorrow.toISOString().split('T')[0];
+</script>
 </body>
 </html>
