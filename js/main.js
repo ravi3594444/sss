@@ -567,3 +567,14 @@
     });
   });
 })();
+
+  /* ---------- HERO BACKGROUND SLIDESHOW ---------- */
+  var heroSlides = document.querySelectorAll('#heroBgSlider .slide');
+  if(heroSlides.length > 1){
+    var currentSlide = 0;
+    setInterval(function(){
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+    }, 4500); // Change image every 4.5 seconds
+  }
