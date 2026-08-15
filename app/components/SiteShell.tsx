@@ -25,18 +25,19 @@ export default function SiteShell({ children }: { children: ReactNode }) {
     let observer: IntersectionObserver | null = null;
     const timer = window.setTimeout(() => {
       const items = document.querySelectorAll<HTMLElement>(".reveal");
-      observer = new IntersectionObserver(
-        (entries) => {
+      const io = new IntersectionObserver(
+        (entries, self) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+              self.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.12, rootMargin: "0px 0px -30px" },
       );
-      items.forEach((item) => observer.observe(item));
+      observer = io;
+      items.forEach((item) => io.observe(item));
     }, 40);
     return () => {
       window.clearTimeout(timer);
