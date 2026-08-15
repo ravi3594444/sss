@@ -1,51 +1,30 @@
-# Karnataka Cafe — Patna Franchise Website
+# Karnataka Cafe Patna
 
-A modern, fully animated, static website for the **Karnataka Cafe Patna** franchise.
-Designed in the style of [karnatakacafe.in](https://karnatakacafe.in) but focused on the
-**menu** (instead of franchise offers), in **English**, for the Patna outlet.
+A five-page, responsive restaurant website for the Karnataka Cafe outlet in Saguna, Patna.
 
 ## Pages
 
-| Page | File | Description |
-|------|------|-------------|
-| Home | `index.html` | Hero, marquee, about, menu preview, why-choose-us, gallery, testimonials, visit/contact, CTA |
-| Menu | `menu.html` | Full menu with 8 categories & prices, tabbed navigation, deep-linkable anchors |
+- `/` — animated homepage, signature dishes, gallery and guest stories
+- `/menu` — searchable, filterable menu with interactive dish previews
+- `/story` — brand story, daily kitchen timeline and restaurant values
+- `/gallery` — filterable photo gallery with keyboard-friendly lightbox
+- `/visit` — reservation form, contact details, opening hours and Google Map
 
-## Features
+## Experience
 
-- Scroll-reveal animations, animated counters, hero parallax & marquee (custom `IntersectionObserver`, no heavy libraries)
-- Fully responsive (mobile hamburger nav)
-- Green & gold South Indian branding matching the original Karnataka Cafe
-- Sticky navbar with active-section highlighting
-- WhatsApp ordering links throughout
-- SEO meta tags + semantic HTML
+- Responsive navigation and five consistent page layouts
+- Scroll reveals, animated marquee, hover motion and ambient hero animation
+- WhatsApp ordering and reservation flows
+- Embedded Google Map for the Saguna outlet
+- Accessible labels, keyboard controls and reduced-motion support
+- Purposeful food and restaurant photography
 
-## Structure
-
-```
-├── index.html
-├── menu.html
-├── css/style.css        # shared styles + theme
-├── js/main.js           # animations, nav, tabs, counters
-├── images/              # food photography
-├── vercel.json          # Vercel deployment config
-└── .vercel/config.json  # legacy Vercel config
-```
-
-## Run locally
+## Development
 
 ```bash
-# any static server, e.g.
-python3 -m http.server 8080
-# then open http://localhost:8080
+npm run dev
+npm run lint
+npm run build
 ```
 
-## Deploy on Vercel
-
-1. Push this repo to GitHub.
-2. In Vercel, **Import Project** from the repo.
-3. Framework Preset: **Other** (it's a static site).
-4. Root Directory: `/` (default). Build command: none. Output: `/`.
-5. Deploy — Vercel reads `vercel.json` automatically.
-
-No build step required; the site is served as static HTML/CSS/JS with asset caching headers.
+Built with Next-compatible Vinext and deployed through ChatGPT Sites.
