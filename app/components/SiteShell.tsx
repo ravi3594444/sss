@@ -22,9 +22,10 @@ export default function SiteShell({ children }: { children: ReactNode }) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let observer: IntersectionObserver | null = null;
     const timer = window.setTimeout(() => {
       const items = document.querySelectorAll<HTMLElement>(".reveal");
-      const observer = new IntersectionObserver(
+      observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -37,7 +38,67 @@ export default function SiteShell({ children }: { children: ReactNode }) {
       );
       items.forEach((item) => observer.observe(item));
     }, 40);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+      observer?.disconnect();
+    };
+  }, [pathname]);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    const root = document.documentElement;
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    let pointerFrame = 0;
+    let scrollFrame = 0;
+
+    const updateParallax = () => {
+      scrollFrame = 0;
+      const viewportCenter = window.innerHeight / 2;
+      document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.bottom < -100 || rect.top > window.innerHeight + 100) return;
+        const distance = rect.top + rect.height / 2 - viewportCenter;
+        const range = window.innerHeight + rect.height;
+        const progress = Math.max(-1, Math.min(1, distance / range));
+        item.style.setProperty("--parallax-y", `${progress * -34}px`);
+      });
+    };
+
+    const scheduleParallax = () => {
+      if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateParallax);
+    };
+
+    const updatePointer = (event: PointerEvent) => {
+      if (!finePointer) return;
+      if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
+      pointerFrame = window.requestAnimationFrame(() => {
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
+        root.style.setProperty("--pointer-x", `${x * -12}px`);
+        root.style.setProperty("--pointer-y", `${y * -8}px`);
+        root.style.setProperty("--pointer-x-reverse", `${x * 16}px`);
+        root.style.setProperty("--pointer-y-reverse", `${y * 10}px`);
+      });
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", scheduleParallax, { passive: true });
+    window.addEventListener("resize", scheduleParallax);
+    window.addEventListener("pointermove", updatePointer, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", scheduleParallax);
+      window.removeEventListener("resize", scheduleParallax);
+      window.removeEventListener("pointermove", updatePointer);
+      if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
+      if (scrollFrame) window.cancelAnimationFrame(scrollFrame);
+      root.style.removeProperty("--pointer-x");
+      root.style.removeProperty("--pointer-y");
+      root.style.removeProperty("--pointer-x-reverse");
+      root.style.removeProperty("--pointer-y-reverse");
+    };
   }, [pathname]);
 
   useEffect(() => {

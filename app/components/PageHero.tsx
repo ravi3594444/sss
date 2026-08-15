@@ -12,7 +12,7 @@ type PageHeroProps = {
 export default function PageHero({ eyebrow, title, italic, description, image, crumb }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <img className="page-hero-image" src={image} alt="" />
+      <img className="page-hero-image" src={image} alt="" data-parallax="" />
       <div className="page-hero-shade" />
       <div className="page-orbit orbit-one" />
       <div className="page-orbit orbit-two" />

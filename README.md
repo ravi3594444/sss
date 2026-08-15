@@ -13,7 +13,8 @@ A five-page, responsive restaurant website for the Karnataka Cafe outlet in Sagu
 ## Experience
 
 - Responsive navigation and five consistent page layouts
-- Scroll reveals, animated marquee, hover motion and ambient hero animation
+- Premium scroll reveals, subtle image parallax, animated marquee and refined hover motion
+- Pointer-aware hero depth on desktop with reduced-motion and touch-safe fallbacks
 - WhatsApp ordering and reservation flows
 - Embedded Google Map for the Saguna outlet
 - Accessible labels, keyboard controls and reduced-motion support

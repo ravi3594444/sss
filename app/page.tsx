@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="hero-image-main"><img src="/images/hero.jpg" alt="A fresh South Indian meal served at Karnataka Cafe" /></div>
+            <div className="hero-image-main"><img src="/images/hero.jpg" alt="A fresh South Indian meal served at Karnataka Cafe" data-parallax="" /></div>
             <div className="hero-image-small"><img src="/images/dosa.jpg" alt="Crisp masala dosa" /><span>Made fresh<br /><b>all day</b></span></div>
             <div className="coffee-badge"><span>Filter</span><strong>Coffee</strong><small>always brewing</small></div>
             <div className="steam steam-one" /><div className="steam steam-two" /><div className="steam steam-three" />
@@ -87,7 +87,7 @@ export default function Home() {
       </section>
 
       <section className="craft-section">
-        <img className="craft-bg" src="/images/thali.jpg" alt="" />
+        <img className="craft-bg" src="/images/thali.jpg" alt="" data-parallax="" />
         <div className="craft-overlay" />
         <div className="site-container craft-grid">
           <div className="craft-copy reveal">
@@ -138,7 +138,7 @@ export default function Home() {
             <div className="visit-facts"><span><small>Open daily</small>7:00 AM–10:30 PM</span><span><small>Call us</small>+91 81303 84879</span></div>
             <Link className="button button-primary" href="/visit">Map &amp; reservations <span>↗</span></Link>
           </div>
-          <div className="visit-image reveal delay-one"><img src="/images/interior.jpg" alt="Welcoming Karnataka Cafe interior" /><div className="live-pin"><i /> We&apos;re open today</div></div>
+          <div className="visit-image reveal delay-one"><img src="/images/interior.jpg" alt="Welcoming Karnataka Cafe interior" data-parallax="" /><div className="live-pin"><i /> We&apos;re open today</div></div>
         </div>
       </section>
     </main>
